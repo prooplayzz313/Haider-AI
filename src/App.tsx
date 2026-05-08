@@ -195,6 +195,12 @@ export default function App() {
                   <div
                     key={s.id}
                     onClick={() => setCurrentSessionId(s.id)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setCurrentSessionId(s.id);
+                      }
+                    }}
                     role="button"
                     tabIndex={0}
                     className={cn(

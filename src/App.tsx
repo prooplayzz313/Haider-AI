@@ -192,11 +192,13 @@ export default function App() {
 
               <div className="flex-1 overflow-y-auto space-y-2 pr-2 scrollbar-hide">
                 {sessions.map((s) => (
-                  <button
+                  <div
                     key={s.id}
                     onClick={() => setCurrentSessionId(s.id)}
+                    role="button"
+                    tabIndex={0}
                     className={cn(
-                      "group relative w-full text-left rounded-xl p-3 transition-all",
+                      "group relative w-full text-left rounded-xl p-3 transition-all cursor-pointer",
                       currentSessionId === s.id 
                         ? "bg-white/5 border border-white/10" 
                         : "hover:bg-white/5 border border-transparent"
@@ -222,7 +224,7 @@ export default function App() {
                         <Trash2 className="h-3 w-3" />
                       </button>
                     </div>
-                  </button>
+                  </div>
                 ))}
               </div>
 
